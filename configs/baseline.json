@@ -1,0 +1,7 @@
+{
+  "activation": "relu", "optimizer": "adam", "lr": 0.001,
+  "batch_size": 128, "epochs": 30, "momentum": 0.9,
+  "weight_decay": 0.0005, "seed": 42, "val_size": 5000,
+  "workers": 2, "no_cutout": false, "no_batch_norm": false,
+  "channels": [64, 128], "run_name": "baseline"
+}

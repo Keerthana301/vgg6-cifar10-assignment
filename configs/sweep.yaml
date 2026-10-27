@@ -1,0 +1,31 @@
+# W&B Bayesian search; runs are limited with: wandb agent SWEEP_ID --count 20
+program: train.py
+method: bayes
+metric:
+  name: best_val_acc
+  goal: maximize
+parameters:
+  activation:
+    values: [relu, sigmoid, tanh, silu, gelu]
+  optimizer:
+    values: [sgd, nesterov, adam, adagrad, rmsprop, nadam]
+  lr:
+    values: [0.0001, 0.001, 0.01]
+  batch_size:
+    values: [64, 128, 256]
+  epochs:
+    values: [15, 30]
+  momentum:
+    value: 0.9
+  weight_decay:
+    value: 0.0005
+  seed:
+    value: 42
+command:
+  - ${env}
+  - ${interpreter}
+  - ${program}
+  - --wandb
+  - --run-name
+  - sweep-run
+  - ${args}

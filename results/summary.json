@@ -1,0 +1,7 @@
+{
+  "run_name": "baseline",
+  "best_val_acc": 79.58,
+  "best_epoch": 27,
+  "last_val_acc": 77.18,
+  "wall_seconds": 564.4164372149999
+}
